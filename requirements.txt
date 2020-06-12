@@ -1,0 +1,8 @@
+celery== 3.1.25
+Flask==1.0.2
+redis==2.10.5
+bson==0.5.9
+kafka-python==2.0.1
+gunicorn
+python-nmap
+

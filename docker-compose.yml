@@ -1,0 +1,23 @@
+app:
+    restart: "always"
+    build: .
+    ports:
+        - "8082:8082"
+    volumes:
+        - ".:/app"
+    links:
+        - redis
+
+celery:
+    restart: "always"
+    build: .
+    # command: "./run_celery.sh"
+    command: bash -c "chmod +x run_celery.sh && ./run_celery.sh"
+    volumes:
+        - ".:/app"
+    links:
+        - redis
+
+redis:
+    restart: "always"
+    image: "redis"
